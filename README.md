@@ -16,3 +16,17 @@ DESCRIBEDBLOGFILES      1600822800000   slowquery/mysql-slowquery.log   0
 DESCRIBEDBLOGFILES      1600821683000   slowquery/mysql-slowquery.log.1 1561
 DESCRIBEDBLOGFILES      1600748310000   slowquery/mysql-slowquery.log.2 2006
 ```
+
+## How to execute the code ?
+
+Example : python rdslogbackup.py buckettype bucketname rdsinstancename region rdsendpoint rdsuser rdspass
+
+```
+buckettype  =>  s3+storj
+bucketname  =>  s3 bucket where you want to save your backups
+rdsinstance =>  Your rds instanceid
+region      =>  AWS region e.g : us-east-1
+rdsendpoint =>  Your rds instance endpoint
+rdsuser     =>  User is required to retrieve binary logs(MySQL)
+rdspass     =>  Password for rdsuser
+```

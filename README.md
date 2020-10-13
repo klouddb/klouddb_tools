@@ -19,10 +19,9 @@ DESCRIBEDBLOGFILES      1600748310000   slowquery/mysql-slowquery.log.2 2006
 
 ## How to execute the code ?
 
-Example : python rdslogbackup.py buckettype bucketname rdsinstancename region rdsendpoint rdsuser rdspass
+Example :python3 rdsmysqllogs.py bucketname rdsinstancename region rdsendpoint rdsuser rdspass
 
 ```
-buckettype  =>  s3
 bucketname  =>  s3 bucket where you want to save your backups
 rdsinstance =>  Your rds instanceid
 region      =>  AWS region e.g : us-east-1

@@ -1,3 +1,26 @@
+# PostgreSQL backups
+
+Amazon RDS for PostgreSQL generates query and error logs. RDS PostgreSQL writes autovacuum information and rds_admin actions to the error log. PostgreSQL also logs connections, disconnections, and checkpoints to the error log
+
+Inorder to generate query logs you need to enable log_statement and log_min_duration_statement. Log_statement can be set to none/all/mod. None is the default which does not log any queries . All option logs all types of queries and mod only records DML statements. log_min_duration_statement can be used to set the cutoff time for queries . For example : If you are interested in queries taking more than 10 seconds , you can set log_min_duration_statement to 10 seconds
+
+
+Below is a sample set of files that you can retrieve from RDS PostgreSQL :
+
+```
+aws --output text rds describe-db-log-files --db-instance-identifier postgres-1  --region us-east-2
+DESCRIBEDBLOGFILES      1600869540000   error/postgres.log      5875
+DESCRIBEDBLOGFILES      1600869540000   error/postgresql.log.2020-09-23-13      2174
+DESCRIBEDBLOGFILES      1600869900000   error/postgresql.log.2020-09-23-14      654
+[root@ip-172-31-35-8 ec2-user]#
+```
+NOTE:  Binary log code is only applicable to MySQL logs. Unfortunately RDS PostgreSQL does not allow us to download WAL files yet 
+
+## How to execute the code ?
+
+Example :python3 rdspostgreslogs.py bucketname rdsinstancename region rdsendpoint rdsuser rdspass
+
+
 # RDS MySQL logs
 
 You can fetch error log , slow log , general log via RDS CLI . But inorder to fetch binary logs you need to use something like below. Our script fetches error log, general log , slow log and binary logs and sorts them by timestamp and RDS instance . Script can be further modified to suit your requirements

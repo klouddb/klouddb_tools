@@ -19,7 +19,14 @@ NOTE:  Binary log code is only applicable to MySQL logs. Unfortunately RDS Postg
 ## How to execute the code ?
 
 Example :python3 rdspostgreslogs.py bucketname rdsinstancename region rdsendpoint rdsuser rdspass
-
+```
+bucketname  =>  s3 bucket where you want to save your backups
+rdsinstance =>  Your rds instanceid
+region      =>  AWS region e.g : us-east-1
+rdsendpoint =>  Your rds instance endpoint
+rdsuser     =>  User is required to retrieve binary logs(MySQL)
+rdspass     =>  Password for rdsuser
+```
 
 # RDS MySQL logs
 

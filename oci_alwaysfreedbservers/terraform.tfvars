@@ -1,0 +1,6 @@
+tenancy_ocid="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+user_ocid="xyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+fingerprint="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+private_key_path="/home/ubuntu/oci_api_key.pem"
+region="us-sanjose-1"
+compartment_ocid="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

@@ -1,5 +1,5 @@
 
-<h2> Populate config file before comparing <h2>
+# Populate config file before comparing 
 
 You need to populate below environment variables . You can put all of below variables in a hidden file called .env and source it . You can issue a command like ‘echo $DB1_HOSTNAME’ to see if the variables are properly initialized
 
@@ -23,6 +23,7 @@ DB2_PORT=5432(change port depending on your config)
 
 DB2_NAME=postgres
 
+# Execute script 
 
 Once above environment variables are loaded please execute the script ‘python3 pgcfgcompare.py’
 

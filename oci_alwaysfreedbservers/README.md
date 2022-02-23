@@ -4,3 +4,7 @@ Oracle cloud gives you two always-free vms which can be used as  sandbox servers
 NOTE : They stay free forever 🙂 No more monthly bills for your test servers
 
 Refer to  http://www.klouddb.io/create-your-two-free-forever-postgresql-mysql-servers-today/   for detailed step-by-step procedure
+
+# Need help ?
+
+Contact us via https://klouddb.io (You should see contact info on our website)

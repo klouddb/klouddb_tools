@@ -41,4 +41,4 @@ server_version : 12.4 -> 12.7
 transaction_read_only : on -> off
 
 # Need help ?
-NOTE : Contact us if you notice any issues 
+NOTE : Contact us if you notice any issues - Visit https://klouddb.io for contact information

@@ -39,3 +39,6 @@ data_directory_mode : 0750 -> 0700
 primary_conninfo : user=replicator password=replicator host=3.22.209.122 port=5432 
 server_version : 12.4 -> 12.7
 transaction_read_only : on -> off
+
+# Need help ?
+NOTE : Contact us if you notice any issues 

@@ -1,14 +1,23 @@
 You need to populate below environment variables . You can put all of below variables in a hidden file called .env and source it . You can issue a command like ‘echo $DB1_HOSTNAME’ to see if the variables are properly initialized
 
 DB1_HOSTNAME=Hostname/ip of first hostname
+
 DB1_USERNAME= username of first hostname
+
 DB1_PASSWORD= password of first hostname
+
 DB1_NAME=postgres
+
 DB1_PORT=5432 (change port depending on your config)
+
 DB2_HOSTNAME=Hostname/ip of second hostname
+
 DB2_USERNAME=username of first hostname
+
 DB2_PASSWORD= password of second hostname
+
 DB2_PORT=5432(change port depending on your config)
+
 DB2_NAME=postgres
 
 

@@ -59,3 +59,6 @@ rdsendpoint =>  Your rds instance endpoint
 rdsuser     =>  User is required to retrieve binary logs(MySQL)
 rdspass     =>  Password for rdsuser
 ```
+# Need help ?
+
+Please contact us via https://klouddb.io (Contact information is available via our website)

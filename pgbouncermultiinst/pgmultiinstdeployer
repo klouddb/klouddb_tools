@@ -1,0 +1,101 @@
+# This can be used to build config files for multiple pgbouncer instances
+# This is basic version and needs further customization. Please send your feedback - Email us at support@klouddb.io
+# NOTE: cfgfilepath is the location of cfg files 
+# NOTE: logfilepath,pidfilepath,socketpath have to be changed as needed
+# NOTE: It uses the logfilepath,pidfilepath,socketpath and creates new cfg file for each instance
+# NOTE : You need to customize this script to suit your needs . This is a basic script which may or may not suit your needs . We have plans to enhance this based on user feedback 
+
+cfgfilepath=/etc/pgbouncer
+logfilepath=/var/log/postgresql
+pidfilepath=/var/run/postgresql
+socketpath=/var/run/postgresql/
+numinstances=$1
+cfgtemplatepath=/etc/pgbouncer/pgbouncer.ini
+
+
+
+createcfgfiles()
+{
+for i in $(seq $numinstances)
+do
+ cp /etc/pgbouncer/pgbouncer.ini $cfgfilepath/pgbouncer$i.ini
+ chown postgres:postgres $cfgfilepath/pgbouncer$i.ini
+sed -i'' -e "s|logfile =.*|logfile = $logfilepath/pgbouncer$i.log|" $cfgfilepath/pgbouncer$i.ini
+sed -i'' -e "s|pidfile =.*|pidfile = $pidfilepath/pgbouncer$i.pid|" $cfgfilepath/pgbouncer$i.ini 
+newpath=${socketpath}pgbouncersock${i}
+sed -i'' -e "s|unix_socket_dir =.*|unix_socket_dir = $newpath|" $cfgfilepath/pgbouncer$i.ini
+
+done
+
+
+}
+
+createdir()
+{
+
+for i in $(seq $numinstances)
+do
+ echo $socketpath
+ mkdir -p ${socketpath}pgbouncersock${i}
+ chown -R postgres:postgres ${socketpath}pgbouncersock${i}
+# chown -R postgres:postgres $socketpath_sock$i
+done
+
+}
+
+createsvc()
+{
+
+for i in $(seq $numinstances)
+do
+cat >> /etc/systemd/system/pgbouncer$i.service << EOF
+[Unit]
+Description=pgBouncer  Instance $i 
+After=postgresql.service
+
+[Service]
+Type=forking
+User=postgres
+Group=postgres
+
+ExecStart=/usr/sbin/pgbouncer -d /etc/pgbouncer/pgbouncer$i.ini
+ExecReload=/bin/kill -SIGHUP $MAINPID
+PIDFile=/var/run/postgresql/pgbouncer$i.pid
+
+EOF
+done
+
+}
+
+
+launchinst()
+{
+
+systemctl daemon-reload
+for i in $(seq $numinstances)
+do
+nohup systemctl start pgbouncer$i &
+done
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+main()
+{
+createcfgfiles
+createdir
+createsvc
+launchinst
+}
+
+main $*

@@ -1,5 +1,9 @@
-###How to execute this script ?
+How to execute this script ?
 
-sh <<scriptname>> n 
+sh multiinstdeployer n 
   
-  - n is the number of instances that you need 
+  "n" is the number of instances that you need 
+  
+  
+  
+  Please read https://klouddb.io/pgbouncer-multi-instance/

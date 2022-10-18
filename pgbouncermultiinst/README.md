@@ -1,4 +1,4 @@
-How to execute this script ?
+#How to execute this script ?
 
 sh multiinstdeployer n 
   

@@ -1,4 +1,4 @@
-# Automation of Postgres SampleDbs
+# Db utility to create pagila , postgres_air , dvdrental and pgbench sample dbs
 
 ## Prereqs
 

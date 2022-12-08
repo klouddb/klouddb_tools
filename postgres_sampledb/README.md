@@ -7,6 +7,7 @@
 * create the `.env` file from `env.example` and change the required password and username etc. 
 * Run `python execute.py` as the script
 
+Please check our blog https://klouddb.io/db-utility-to-deploy-4-postgres-sample-dbs-pagilapostgres_airdvdrentalpgbench/ for detailed walkthrough
 ## Functionality
 
 * It works for 4 databases: 

@@ -4,3 +4,5 @@
 - [oci_alwaysfreedbservers](https://github.com/klouddb/klouddb_tools/tree/main/oci_alwaysfreedbservers/) - 100% free servers forever - Get them today
 - [postgrescfgcompare](https://github.com/klouddb/klouddb_tools/tree/main/postgrescfgcompare) - DB Utility to compare Postgresql cfg between two different servers
 - [pgbouncer_multiinstlauncher](https://github.com/klouddb/klouddb_tools/tree/main/pgbouncermultiinst) - DB Utility to launch multiple pgbouncer instances
+
+- [postgres_sampledatabase](https://github.com/klouddb/klouddb_tools/tree/main/postgres_sampledb) - DB Utility to create 4 sample dbs - Pagila,Postgres_air,Pgbench and Dvdrental
